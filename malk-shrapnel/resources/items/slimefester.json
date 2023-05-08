@@ -1,0 +1,82 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Jrprogrammer/CoreLib/master/CoreLib/Submodules/JsonLoader/Schemas/entity_schema.json",
+  "type" : "item",
+  "itemId" : "MyMod:GoldBow",
+  "icon" : {
+    "path" : "icons/gold_bow_icons.png",
+    "type" : "icon-top"
+  },
+  "smallIcon" : {
+    "path" : "icons/gold_bow_icons.png",
+    "type" : "icon-bottom"
+  },
+  "iconOffset": [0, 0.0625],
+  "localizedName" : "Gold Bow",
+  "localizedDescription" : "Bow added using Json",
+  "objectType" : "RangeWeapon",
+  "initialAmount": 350,
+  "additionalSprites" : [
+    {
+      "path" : "icons/gold_bow.png",
+      "rect": {
+        "x": 0,
+        "y": 80,
+        "width": 40,
+        "height": 40
+      }
+    }
+  ],
+  "components": [
+    {
+      "type": "DurabilityCDAuthoring",
+      "maxDurability": 350,
+      "repairMultiplier": 0.5,
+      "reinforceCostMultiplier": 1
+    },
+    {
+      "type": "GivesConditionsWhenEquippedCDAuthoring",
+      "givesConditionsWhenEquipped": [
+        {
+          "id": "RangeDamageIncrease",
+          "valueMultiplier": 1,
+          "value": 200
+        }
+      ]
+    },
+    {
+      "type": "CooldownCDAuthoring",
+      "cooldown": 0.1
+    },
+    {
+      "type": "WeaponDamageCDAuthoring",
+      "damage": 140,
+      "damageMultiplier": 1,
+      "isRange" : true
+    },
+    {
+      "type": "RangeWeaponCDAuthoring",
+      "projectileID" : "IronArrowProjectile",
+      "spawnOffsetDistance" : 0
+    },
+    {
+      "type": "LevelCDAuthoring",
+      "areaLevel" : "Stone",
+      "level" : 8
+    }
+  ],
+  "craftingTime": 1,
+  "requiredObjectsToCraft" : [
+    {
+      "objectID" : "IronBar",
+      "amount" : 2
+    },
+    {
+      "objectID" : "GoldBar",
+      "amount" : 7
+    },
+    {
+      "objectID" : "Wood",
+      "amount" : 5
+    }
+  ]
+}
